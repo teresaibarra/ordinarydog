@@ -1,2 +1,1 @@
-# ordinarydog
-literally a pet project
+for logging all the times that my dog gets upset at ????
