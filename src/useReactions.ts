@@ -9,7 +9,9 @@ const useReactions = () => {
         const reactionsCol = collection(db, 'reactions');
         const reactionSnapshot = await getDocs(reactionsCol);
         const reactionList = reactionSnapshot.docs.map(doc => doc.data());
-        setReactions(reactionList);
+        const sortedReactionList = reactionList.sort((a, b) => b.timestamp.toDate().getTime() - a.timestamp.toDate().getTime());
+
+        setReactions(sortedReactionList);
     };
 
     useEffect(() => {
